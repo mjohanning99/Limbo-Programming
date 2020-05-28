@@ -1,17 +1,17 @@
-implement Command;
+implement GreetEvenMoreImproved;
 
 include "sys.m";
 include "draw.m";
 sys: Sys;
 
-Command: module {
+GreetEvenMoreImproved: module {
   init: fn (ctxt: ref Draw->Context, argv: list of string);
 };
     sys = load Sys Sys->PATH;
-    args = tl args;     # skip over program name
+    args = tl args;     
     for (s := ""; args != nil; args = tl args)
         s += " " + hd args;
 
-    if (s != "")        # something was stored in s
+    if (s != "")       
         sys->print("%s\n", s[1:]);
 }
